@@ -14,7 +14,7 @@ Masto Img is an opensource screenshot tool for [Mastodon](https://joinmastodon.o
 
 Required for a MVP.
 
-- [ x ] Design card for toots
-- [ x ] Design homepage
-- [ x ] Implement search using Mastodon API
+- [x] Design card for toots
+- [x] Design homepage
+- [x] Implement search using Mastodon API
 - [ ] Ability to download a toot as an image
