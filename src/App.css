@@ -2,6 +2,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  box-sizing: border-box;
 }
 
 .app {
@@ -13,10 +14,19 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .heading {
   margin-bottom: 40px;
+}
+
+.toot-card-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .toot-card {
@@ -28,6 +38,27 @@ body {
   width: 100%;
   margin: 20px 0;
   text-align: left;
+  box-sizing: border-box;
+  overflow-wrap: break-word; /* Ensure text wraps properly */
+  word-wrap: break-word; /* For compatibility with older browsers */
+  word-break: break-word; /* Break long words to prevent overflow */
+  transform-origin: top left; /* Ensure scaling from top left */
+}
+
+/* Ensure the footer stays on one line by setting a minimum width */
+@media (max-width: 600px) {
+  
+
+  .toot-card {
+    min-width: 280px; /* Set a minimum width for the card */
+    width: max-content;
+    transform: scale(0.62); /* Scale down proportionally */
+    transform-origin: center; /* Ensure scaling from top left */
+    }
+
+  .toot-footer {
+    flex-wrap: nowrap; /* Prevent the footer from wrapping */
+  }
 }
 
 .toot-header {
@@ -59,6 +90,9 @@ body {
 
 .toot-content {
   margin-bottom: 15px;
+  overflow-wrap: break-word; /* Ensure text wraps properly */
+  word-wrap: break-word; /* For compatibility with older browsers */
+  word-break: break-word; /* Break long words to prevent overflow */
 }
 
 .toot-content a {
@@ -72,6 +106,7 @@ body {
   align-items: center;
   font-size: 0.9em;
   color: #aaa;
+  flex-wrap: nowrap; /* Ensure the footer is on a single line */
 }
 
 .toot-footer .stats {
@@ -83,4 +118,29 @@ body {
   width: 1em;
   height: 1em;
   vertical-align: middle;
+}
+
+/* Additional responsive styles to adjust font size and padding */
+@media (max-width: 600px) {
+  .app {
+    padding: 10px;
+  }
+
+  .heading {
+    font-size: 1.5em;
+  }
+
+  .toot-card {
+    padding: 15px;
+  }
+
+  .profile-pic {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+
+  .display-name {
+    font-size: 1em;
+  }
 }
