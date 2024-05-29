@@ -17,4 +17,4 @@ Required for a MVP.
 - [x] Design card for toots
 - [x] Design homepage
 - [x] Implement search using Mastodon API
-- [ ] Ability to download a toot as an image
+- [x] Ability to download a toot as an image
