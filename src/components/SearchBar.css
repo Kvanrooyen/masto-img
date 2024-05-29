@@ -16,6 +16,7 @@
   border-right: none;
   background-color: #f0f0f0; /* Almost white */
   color: #333; /* Dark text for readability */
+  box-sizing: border-box;
 }
 
 .search-button {
@@ -29,27 +30,46 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .search-button svg {
   color: #000; /* Black icon */
 }
 
+.download-button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #858afa;
+  color: white;
+  cursor: pointer;
+}
+
 /* Responsive Styles */
 @media (max-width: 600px) {
   .search-bar {
-    align-items: center;
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .search-input {
-    border-radius: 6px 0 0 6px;
-    border-right: 1px solid #ddd;
-    width: 90%;
+    border-radius: 6px 6px 0 0;
+    border-right: none;
+    width: 100%;
+    margin-bottom: 0; /* Avoid double border */
   }
 
   .search-button {
-    font-size: 1.2em;
-    border-radius: 0 6px 6px 0;
-    width: 10%;
+    border-radius: 0 0 6px 6px;
+    width: 100%;
+    margin-top: 0; /* Avoid double border */
+  }
+
+  .download-button {
+    width: 100%;
   }
 }
