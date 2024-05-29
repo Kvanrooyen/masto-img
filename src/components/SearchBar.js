@@ -1,33 +1,37 @@
-// SearchBar.js
 import React, { useState } from 'react';
 import './SearchBar.css';
-import { FaSearch } from 'react-icons/fa';
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = ({ onSearch, onDownload }) => {
   const [input, setInput] = useState('');
 
   const handleInputChange = (event) => {
     setInput(event.target.value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSearchClick = () => {
     onSearch(input);
   };
 
   return (
-    <form onSubmit={handleSubmit} className="search-bar">
-      <input
-        type="text"
-        value={input}
-        onChange={handleInputChange}
-        placeholder="Enter Mastodon toot URL"
-        className="search-input"
-      />
-      <button type="submit" className="search-button">
-        <FaSearch />
-      </button>
-    </form>
+    <div className="search-bar-container">
+      <form className="search-bar">
+        <input
+          type="text"
+          value={input}
+          onChange={handleInputChange}
+          placeholder="Enter Mastodon toot URL"
+          className="search-input"
+        />
+      </form>
+      <div className="buttons-container">
+        <button className="button search-button" onClick={handleSearchClick}>
+          Search
+        </button>
+        <button className="button download-button" onClick={onDownload}>
+          Download as Image
+        </button>
+      </div>
+    </div>
   );
 };
 
